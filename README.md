@@ -37,3 +37,8 @@ Push 22: This side bet gives you a payout if the dealer gets 22.
 | Other 22     | 8   |
 | Same Color 22| 20     |
 | Same Suit 22 | 50     |
+
+
+### Techincal info
+Python version 3.11.4
+install using `pip install -r ./requirements.txt`

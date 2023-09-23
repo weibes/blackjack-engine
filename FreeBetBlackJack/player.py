@@ -23,7 +23,7 @@ class Player:
     def getMoney(self) -> int:
         return self.money
 
-    def dealCard(self, card: str:) -> None:
+    def dealCard(self, card: str) -> None:
         self.hand.append(card)
     
     def getHand(self) -> list[str]:

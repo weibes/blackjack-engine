@@ -1,0 +1,5 @@
+# implement ability for players to have strategy - 
+    - incl. martingale strat, basic strat, counting w/ sims, etc.
+    - get EV 
+        - needs: # hands/hour, then simed
+    

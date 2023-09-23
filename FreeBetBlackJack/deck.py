@@ -9,15 +9,14 @@ STARTING_LIST = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A
 
 
 class Deck:
-    
+
     def __init__(self, num_decks=8):
         self.num_decks = num_decks
-        self.deck = self.shuffleDeck()
+        self.shuffleDeck()
 
-    def shuffleDeck(self) -> list:
-        deck = shuffle(STARTING_LIST * self.num_decks)
-        return deck
-
+    def shuffleDeck(self):
+        self.deck = STARTING_LIST * self.num_decks
+        shuffle(self.deck)
 
     def dealCard(self) -> str:
         return self.deck.pop()

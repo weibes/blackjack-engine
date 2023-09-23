@@ -3,3 +3,6 @@
     - get EV 
         - needs: # hands/hour, then simed
     
+# decide on design paradigm - who controls flow of data: simluator, or individual units
+# formats for implementation/usage - just CLI? or GUI/WEb?
+# implementation of side bets

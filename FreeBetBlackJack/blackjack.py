@@ -36,7 +36,7 @@ class BlackJack:
                 if player.inHand() and player.wantInsurance():
                     
         # go thru each player
-    
+        
         # dealer plays game
 
         # wind down game. Give money out as needed, shuffle deck if needed according to deck pen, etc.

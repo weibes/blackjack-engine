@@ -1,21 +1,30 @@
-import configparser
-"""Player Object simply wraps a player into an object. A Player can initialized with a particular strategy, either as a preconfigured strategy, or as a custom list of betting/playing procedures.
-"""
-class Player:
-    """Player Object
+import csv
+class BlackJackPlayer:
+    """BlackJackPlayer Object A Player can initialized
+        with a particular strategy, either as a preconfigured strategy, or as a custom
+        list of betting/playing procedures.
 
     Arguments:
     starting_money: The amount of money the player starts with.
-
+    strategy_config: String name of various types of strategies that a player could use.
+    
     Returns: Player() Object 
-
     """
-
-    def __init__(self, starting_money=1000, strategyConfig='basic_strategy'):
-        config = configparser.ConfigParser()
+    def __init__(self, starting_money=1000, strategy_config='basic_strategy'):
         self.money = starting_money
         self.hand = []
         self.inHand = True
+        self.loadConfig(strategy_config)
+
+    def loadConfig(self, strategy_config):
+        config_path = '../data' + strategy_config
+        self.decision = {}
+        self.hard = {}
+        with open(config_path + 'hard.csv') as f:
+            csvreader = csv.reader(f, delimiter=',')
+            for row in csvreader[1]:  # removing top row  
+                for item in row[1]:
+                    
 
     def setMoney(self, money: int) -> None:
         self.money = money

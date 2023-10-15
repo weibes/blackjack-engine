@@ -22,8 +22,15 @@ class BlackJackPlayer:
         self.hard = {}
         with open(config_path + 'hard.csv') as f:
             csvreader = csv.reader(f, delimiter=',')
-            for row in csvreader[1]:  # removing top row  
-                for item in row[1]:
+            player_hand = csvreader[0]
+            for row in csvreader[1:]:
+                dealer_card = row[0]
+                row_decision = {}
+                for i in range(1, len(row[1:])):
+                    curr_decision = row[i]
+                for curr_decision in row[1]:
+                    # setup into dict
+                    row_decision[]
                     
 
     def setMoney(self, money: int) -> None:
@@ -66,7 +73,7 @@ class BlackJackPlayer:
 
     # TODO: Implement actual logic of player hand
     def playHand(self, dealer_card: str, curr_value: int, isSoft: bool, isPair: bool) -> str:
-        return "St"
+        return "St
     
     # TODO: Implement with strategy
     def wantInsurance(self) -> bool:

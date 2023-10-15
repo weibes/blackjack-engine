@@ -4,7 +4,8 @@ import unittest
 sys.path.append(path.abspath('../FreeBetBlackJack'))
 from deck import Deck, STARTING_LIST
 
-    """TODO:
+    """
+    TODO:
     Tests for errors when written in future
     """
 

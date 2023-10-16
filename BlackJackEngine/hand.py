@@ -18,7 +18,7 @@ class Hand():
     def calculate_hand_value(self) -> int:
         count = 0
         aces_count = 0
-        for card in self.hand:
+        for card in self.cards:
             if card == "A":
                 count += 11
                 aces_count += 1
@@ -30,10 +30,10 @@ class Hand():
         self.set_is_bust(count)
         self.set_is_soft(aces_count)
         return count
-    
+
     def get_is_bust(self) -> bool:
         return self.bust
-    
+
     def set_is_bust(self, count: int):
         self.bust =  count >= 22
 
@@ -42,6 +42,6 @@ class Hand():
 
     def set_is_soft(self, aces_count: int):
         self.soft = aces_count >= 1
-    
+
     def calculate_can_split(self) -> bool:
         return len(self.cards) == 2 and self.cards[0] == self.cards[1]

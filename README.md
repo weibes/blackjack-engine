@@ -1,6 +1,11 @@
-# Number Crunching Black Jack - Free Bet version
+# Number Crunching Black Jack -
+This is a WIP library for running Monte Carlo blackjack simulations. it is currently being designed as a testing library for quickly and easily building custom blackjack style games and testing potential play styles. 
 
-This is just a quick monte carlo/data crunching experiment to see what the house edge is on the free bet version of blackjack. Its mainly going to consist of a few tests:
+
+
+
+
+#### Old stuff related to free-bet
 
 1. Generating a basic strategy, and seeing what the house edge is on this strategy
 2. Potentially generating some sort of "card counting" strategy for free bet, and seeing how much it can reduce house edge

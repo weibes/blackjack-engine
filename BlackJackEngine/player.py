@@ -69,22 +69,51 @@ class BlackJackPlayer:
         return 1 
     
     # calculate all bets for all hands
+    # TODO Add to config, curr just bet 10 every time.
     def calculate_bets(self) -> list[int]:
+        bet_list = []
+        for hand in self.hands:
+            bet_list.append(10)
+        return bet_list
+    
+    # get a hand to play. Returns CURRENT index of the hand (not guaranteed to be consistent)
+    def add_hand(self, hand: Hand) -> idx:
+        self.hands.append(hand)
+        return len(self.hands) - 1
+    
+    # peek a specific hand, doesn't pop out of players hands
+    def peek_hand(self, idx: int) -> Hand:
+        return self.hands[idx]
 
     # pop a specific hand out of the player's current hands
     def pop_hand(self, idx: int) -> Hand:
+        return self.hands.pop(idx)
+    
+    # clears all hands the player currently holds. Good for in between rounds
+    def clear_hands(self):
+        self.hands = []
     
     # set the amount of money the player currently has
     def set_money(self, money: int):
+        self.money = money
 
     # get the amt of money the player has
     def get_money(self) -> int:
-
+        return self.money
+    
     # get the count of a certain hand the player has
     def get_hand_count(self, idx: int) -> int:
+        curr_hand = self.hands[idx]
+        return curr_hand.calculate_hand_value()
 
     # get the decision for a particular hand
     def get_hand_decision(self, idx: int) -> int:
+        curr_hand = self.hands[idx]
+        # check if surrender
 
+
+    # TODO Add config, currently just giving false.
     # calculate insurance for all players hands
     def calculate_insurance(self) -> list[bool]:
+        return ['false' for x in self.hands]
+    
